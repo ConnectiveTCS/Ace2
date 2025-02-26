@@ -1,0 +1,8 @@
+.card-3d {
+    perspective: 1000px; /* enables 3D perspective */
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+.card-3d:hover {
+    transform: rotateY(10deg) translateZ(10px);
+}
