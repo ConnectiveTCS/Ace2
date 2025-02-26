@@ -33,15 +33,15 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'clientName'        => 'nullable|string|max:255',
-            'clientBusinessName'         => 'nullable|string|max:255',
-            'clientProjectCategory'             => 'nullable|object',
-            'clientProjectName'             => 'nullable|string|max:255',
-            'clientShortStudy'          => 'nullable||integer|between:1875,2025',
-            'clientProjectDuration'         => 'nullable|string|max:255',
-            'clientReviewProject'  => 'nullable|string|max:255',
-            'clientProfilePicture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
-            'clientImage' => 'nullable||images|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
+            'clientName'            => 'nullable|string|max:255',
+            'clientBusinessName'    => 'nullable|string|max:255',
+            'clientProjectCategory' => 'nullable|array',
+            'clientProjectName'     => 'nullable|string|max:255',
+            'clientShortStudy'      => 'nullable|string',
+            'clientProjectDuration' => 'nullable|string|max:255',
+            'clientReviewProject'   => 'nullable|string|max:255',
+            'clientProfilePicture'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
+            'clientImage'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
         ]);
 
         $data['user_id'] = Auth::user()->id;

@@ -2,8 +2,8 @@
     {{-- Left Column --}}
     <div class="flex flex-col items-start justify-center space-y-4">
         {{-- Project Image --}}
-        <img src="{{ $project->clientImage ?? asset('assets/ND1.webp') }}" alt="{{ $project->clientName ?? 'Client Name' }} Photo"
-            class="w-full h-96 object-cover rounded-lg shadow-lg">
+        <img src="{{ $project->clientImage ?? asset('assets/ND1.webp') }}"
+            alt="{{ $project->clientName ?? 'Client Name' }} Photo" class="w-full h-96 object-cover rounded-lg shadow-lg">
         {{-- Review Section --}}
         <h3 class="text-xl font-bold dark:text-white text-black">Client Review</h3>
         <div class="flex flex-col items-start justify-center space-y-4 p-2 bg-gray-100 dark:bg-gray-900 rounded-lg">
@@ -31,15 +31,24 @@
     <div class="border-t border-red-600 sticky top-24 self-start end gap-4 flex flex-row p-4">
         {{-- Project Details --}}
         {{-- Spacer --}}
-        <div class="md:block md:min-w-[20%] dark:text-white text-black">{{ $project->clientProjectDuration ?? '1 Month' }}</div>
+        <div class="md:block md:min-w-[20%] dark:text-white text-black">
+            {{ $project->clientProjectDuration ?? '1 Month' }}</div>
         <div class="md:w-[80%]">
             <h2 class="text-3xl dark:text-white text-black">{{ $project->clientBusinessName ?? 'Next Devlivery' }}</h2>
             <hr class="my-4 border-red-600">
             <p class="dark:text-white text-black">
-                {{ $project->clientShortStudy ?? "We designed and developed a new website for Next Delivery, a South African delivery services company. We aimed to clearly communicate their services, enhance the user experience for potential customers, and align the website with Next Delivery's brand identity" }}
+                @if (is_array($project->clientShortStudy))
+                    {{ implode(', ', $project->clientShortStudy) }}
+                @else
+                    {{ $project->clientShortStudy ?? "We designed and developed a new website for Next Delivery, a South African delivery services company. We aimed to clearly communicate their services, enhance the user experience for potential customers, and align the website with Next Delivery's brand identity" }}
+                @endif
             </p>
             <span class="dark:text-white text-black text-lg">TYPE: <span class="flip-text inline-block">
-                    {{ $project->clientProjectCategory ?? 'hello' }}
+                    @if (is_array($project->clientProjectCategory))
+                        {{ implode(', ', $project->clientProjectCategory) }}
+                    @else
+                        {{ $project->clientProjectCategory ?? 'hello' }}
+                    @endif
                 </span></span>
 
         </div>
@@ -47,7 +56,9 @@
     </div>
 </div>
 @php
-    $flipWords = [$project->clientProjectCategory];
+    $flipWords = is_array($project->clientProjectCategory)
+        ? $project->clientProjectCategory
+        : [$project->clientProjectCategory];
 @endphp
 <script>
     // Use the pre-defined PHP variable for flipWords

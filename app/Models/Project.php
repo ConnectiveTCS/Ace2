@@ -20,4 +20,9 @@ class Project extends Model
         'clientProjectDuration',
         'clientReviewProject',
     ];
+
+    protected $casts = [
+        'clientImage' => 'array',
+        'clientProjectCategory' => 'array',
+    ];
 }

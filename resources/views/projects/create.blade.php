@@ -9,6 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                    @if ($errors->any())
+                        <div class="mb-4">
+                            <ul class="list-disc list-inside text-red-500">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{ route('projects.store') }}" method="POST" class="max-w-full mx-auto"
                         enctype="multipart/form-data">
                         @csrf
@@ -23,13 +32,13 @@
                             <label for="clientProfilePicture"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Profile
                                 Picture</label>
-                            <input type="file" id="clientProfilePicture"
+                            <input type="file" id="clientProfilePicture" name="clientProfilePicture"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
                         <div class="mb-5">
                             <label for="clientName"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Name</label>
-                            <input type="text" id="clientName"
+                            <input type="text" id="clientName" name="clientName"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="clientName" />
                         </div>
@@ -37,7 +46,7 @@
                             <label for="clientBusinessName"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Business
                                 Name</label>
-                            <input type="text" id="clientBusinessName"
+                            <input type="text" id="clientBusinessName" name="clientBusinessName"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="clientBusinessName" />
                         </div>
@@ -47,30 +56,30 @@
                                 Category</label>
 
                             <div>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <input type="checkbox" id="clientProjectCategory1" name="clientProjectCategory[]"
                                     value="Web Development">
-                                <label for="Web Development">Web Development</label><br>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <label for="clientProjectCategory1">Web Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory2" name="clientProjectCategory[]"
                                     value="Mobile Development">
-                                <label for="Mobile Development">Mobile Development</label><br>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <label for="clientProjectCategory2">Mobile Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory3" name="clientProjectCategory[]"
                                     value="Desktop Development">
-                                <label for="Desktop Development">Desktop Development</label><br>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <label for="clientProjectCategory3">Desktop Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory4" name="clientProjectCategory[]"
                                     value="Game Development">
-                                <label for="Game Development">Game Development</label><br>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <label for="clientProjectCategory4">Game Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory5" name="clientProjectCategory[]"
                                     value="AI Development">
-                                <label for="AI Development">AI Development</label><br>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <label for="clientProjectCategory5">AI Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory6" name="clientProjectCategory[]"
                                     value="Machine Learning Development">
-                                <label for="Machine Learning Development">Machine Learning Development</label><br>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <label for="clientProjectCategory6">Machine Learning Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory7" name="clientProjectCategory[]"
                                     value="Data Science Development">
-                                <label for="Data Science Development">Data Science Development</label><br>
-                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                <label for="clientProjectCategory7">Data Science Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory8" name="clientProjectCategory[]"
                                     value="Other Development">
-                                <label for="Other Development">Other Development</label><br>
+                                <label for="clientProjectCategory8">Other Development</label><br>
 
                             </div>
                         </div>
@@ -92,7 +101,7 @@
                             <label for="clientProjectDuration"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">client Project
                                 Duration</label>
-                            <input type="text" id="clientProjectDuration"
+                            <input type="text" id="clientProjectDuration" name="clientProjectDuration"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="clientProjectDuration" />
                         </div>
@@ -100,7 +109,7 @@
                             <label for="clientReviewProject"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client
                                 Review</label>
-                            <input type="text" id="clientReviewProject"
+                            <input type="text" id="clientReviewProject" name="clientReviewProject"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Client Review" />
                         </div>
