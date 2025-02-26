@@ -31,6 +31,12 @@
                     <a href="#"
                         class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Contact</a>
                 </li>
+                @auth
+                <li>
+                    <a href="{{ route('projects.index') }}"
+                        class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Admin: Projects</a>
+                </li>
+                @endauth
             </ul>
 
         </div>

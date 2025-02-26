@@ -1,0 +1,115 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <form action="{{ route('projects.store') }}" method="POST" class="max-w-full mx-auto"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-5">
+                            <label for="clientImage"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client
+                                Image</label>
+                            <input type="file" id="clientImage" name="clientImage"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientProfilePicture"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Profile
+                                Picture</label>
+                            <input type="file" id="clientProfilePicture"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientName"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Name</label>
+                            <input type="text" id="clientName"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="clientName" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientBusinessName"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Business
+                                Name</label>
+                            <input type="text" id="clientBusinessName"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="clientBusinessName" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientProjectCategory"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Project
+                                Category</label>
+
+                            <div>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="Web Development">
+                                <label for="Web Development">Web Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="Mobile Development">
+                                <label for="Mobile Development">Mobile Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="Desktop Development">
+                                <label for="Desktop Development">Desktop Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="Game Development">
+                                <label for="Game Development">Game Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="AI Development">
+                                <label for="AI Development">AI Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="Machine Learning Development">
+                                <label for="Machine Learning Development">Machine Learning Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="Data Science Development">
+                                <label for="Data Science Development">Data Science Development</label><br>
+                                <input type="checkbox" id="clientProjectCategory[]" name="clientProjectCategory"
+                                    value="Other Development">
+                                <label for="Other Development">Other Development</label><br>
+
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientProjectName"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Full
+                                Brief</label>
+                            <textarea name="clientProjectName" id="clientProjectName" cols="30" rows="10"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientShortStudy"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client Short
+                                Study</label>
+                            <textarea name="clientShortStudy" id="clientShortStudy" cols="30" rows="10"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientProjectDuration"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">client Project
+                                Duration</label>
+                            <input type="text" id="clientProjectDuration"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="clientProjectDuration" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientReviewProject"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client
+                                Review</label>
+                            <input type="text" id="clientReviewProject"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Client Review" />
+                        </div>
+                        <button type="submit"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

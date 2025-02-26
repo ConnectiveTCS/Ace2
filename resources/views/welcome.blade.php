@@ -41,7 +41,9 @@
     {{-- Projects --}}
    <section class="mt-16 bg-gray-100 dark:bg-gray-900 md:h-[100vh] md:p-3 md:px-32">
     <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-100 text-center">Our Projects</h2>
+    @foreach ( $projects as $project )        
     @include('components.project-card')
+    @endforeach
         
    </section>
 
