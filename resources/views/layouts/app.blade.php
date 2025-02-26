@@ -17,6 +17,11 @@
 
         {{-- Flowbite --}}
         <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <style>
+            body {
+                background-color: red;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -32,10 +37,10 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main >
                 {{ $slot }}
             </main>
+    @include('layouts.footer')
         </div>
     </body>
-    @include('layouts.footer')
 </html>
