@@ -36,12 +36,13 @@ class ProjectController extends Controller
             'clientName'            => 'nullable|string|max:255',
             'clientBusinessName'    => 'nullable|string|max:255',
             'clientProjectCategory' => 'nullable|array',
-            'clientProjectName'     => 'nullable|string|max:255',
+            'clientProjectName'     => 'nullable|string',
             'clientShortStudy'      => 'nullable|string',
             'clientProjectDuration' => 'nullable|string|max:255',
             'clientReviewProject'   => 'nullable|string|max:255',
             'clientProfilePicture'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
             'clientImage'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
+            'clientRating'          => 'nullable|string|max:5',
         ]);
 
         $data['user_id'] = Auth::user()->id;
@@ -81,7 +82,29 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         //
-        $project->update($request->all());
+        $data = $request->validate([
+            'clientName'            => 'nullable|string|max:255',
+            'clientBusinessName'    => 'nullable|string|max:255',
+            'clientProjectCategory' => 'nullable|array',
+            'clientProjectName'     => 'nullable|string|max:255',
+            'clientShortStudy'      => 'nullable|string',
+            'clientProjectDuration' => 'nullable|string|max:255',
+            'clientReviewProject'   => 'nullable|string|max:255',
+            'clientProfilePicture'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
+            'clientImage'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
+            'clientRating'          => 'nullable|string|max:5',
+        ]);
+
+        $data['user_id'] = Auth::user()->id;
+
+        if ($request->hasFile('clientProfilePicture')) {
+            $data['clientProfilePicture'] = $request->file('clientProfilePicture')->store('projects', 'public');
+        }
+        if ($request->hasFile('clientImage')) {
+            $data['clientImage'] = $request->file('clientImage')->store('projects', 'public');
+        };
+        $project->update($data);
+        
         return redirect()->route('projects.index');
     }
 

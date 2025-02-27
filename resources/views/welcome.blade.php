@@ -53,7 +53,7 @@
                 class=" my-auto text-center text-gray-700 h-full dark:text-gray-300 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                 <h2
                     class="text-4xl font-extrabold text-gray-900 dark:text-gray-100 sm:text-5xl md:text-3xl col-span-1 col-start-2">
-                    We believe in designing websites that are both beautiful and functional. My approach combines
+                    We believe in designing websites that are both beautiful and functional. Our approach combines
                     strategic
                     thinking with a keen eye for detail, ensuring that every project tells your unique story<span
                         class="text-[#ff3b1d]">.</span>

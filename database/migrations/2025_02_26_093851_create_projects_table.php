@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('clientShortStudy')->nullable();
             $table->string('clientProjectDuration')->nullable();
             $table->string('clientReviewProject')->nullable();
+            $table->string('clientRating')->nullable();
         });
     }
 

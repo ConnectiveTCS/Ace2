@@ -19,6 +19,7 @@ class Project extends Model
         'clientShortStudy',
         'clientProjectDuration',
         'clientReviewProject',
+        'clientRating',
     ];
 
     protected $casts = [

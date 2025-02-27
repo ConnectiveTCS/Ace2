@@ -60,23 +60,23 @@
                                     value="Web Development">
                                 <label for="clientProjectCategory1">Web Development</label><br>
                                 <input type="checkbox" id="clientProjectCategory2" name="clientProjectCategory[]"
-                                    value="Mobile Development">
-                                <label for="clientProjectCategory2">Mobile Development</label><br>
+                                    value="SEO">
+                                <label for="clientProjectCategory2">SEO</label><br>
                                 <input type="checkbox" id="clientProjectCategory3" name="clientProjectCategory[]"
-                                    value="Desktop Development">
-                                <label for="clientProjectCategory3">Desktop Development</label><br>
+                                    value="WordPress">
+                                <label for="clientProjectCategory3">WordPress</label><br>
                                 <input type="checkbox" id="clientProjectCategory4" name="clientProjectCategory[]"
-                                    value="Game Development">
-                                <label for="clientProjectCategory4">Game Development</label><br>
+                                    value="Laravel">
+                                <label for="clientProjectCategory4">Laravel</label><br>
                                 <input type="checkbox" id="clientProjectCategory5" name="clientProjectCategory[]"
-                                    value="AI Development">
-                                <label for="clientProjectCategory5">AI Development</label><br>
+                                    value="Web Application">
+                                <label for="clientProjectCategory5">Web Application</label><br>
                                 <input type="checkbox" id="clientProjectCategory6" name="clientProjectCategory[]"
-                                    value="Machine Learning Development">
-                                <label for="clientProjectCategory6">Machine Learning Development</label><br>
+                                    value="Copy Writing">
+                                <label for="clientProjectCategory6">Copy Writing</label><br>
                                 <input type="checkbox" id="clientProjectCategory7" name="clientProjectCategory[]"
-                                    value="Data Science Development">
-                                <label for="clientProjectCategory7">Data Science Development</label><br>
+                                    value="Marketing">
+                                <label for="clientProjectCategory7">Marketing</label><br>
                                 <input type="checkbox" id="clientProjectCategory8" name="clientProjectCategory[]"
                                     value="Other Development">
                                 <label for="clientProjectCategory8">Other Development</label><br>
@@ -112,6 +112,14 @@
                             <input type="text" id="clientReviewProject" name="clientReviewProject"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Client Review" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="clientRating"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Client
+                                Rating</label>
+                            <input type="number" id="clientRating" name="clientRating"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="1-5" min="1" max="5" maxlength="1"/>
                         </div>
                         <button type="submit"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
