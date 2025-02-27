@@ -40,8 +40,8 @@ class ProjectController extends Controller
             'clientShortStudy'      => 'nullable|string',
             'clientProjectDuration' => 'nullable|string|max:255',
             'clientReviewProject'   => 'nullable|string|max:255',
-            'clientProfilePicture'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
-            'clientImage'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
+            'clientProfilePicture'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10048',
+            'clientImage'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10048',
             'clientRating'          => 'nullable|string|max:5',
         ]);
 
@@ -90,8 +90,8 @@ class ProjectController extends Controller
             'clientShortStudy'      => 'nullable|string',
             'clientProjectDuration' => 'nullable|string|max:255',
             'clientReviewProject'   => 'nullable|string|max:255',
-            'clientProfilePicture'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
-            'clientImage'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:10048',
+            'clientProfilePicture'  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10048',
+            'clientImage'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10048',
             'clientRating'          => 'nullable|string|max:5',
         ]);
 
