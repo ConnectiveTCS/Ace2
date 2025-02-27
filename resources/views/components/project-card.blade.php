@@ -38,7 +38,7 @@
         @endif
     </div>
     {{-- Right Column --}}
-    <div class=" border-t-2 border-[#5ecde1] sticky top-24 self-start end gap-4 flex flex-row p-4">
+    <div class=" border-t-2 border-[#5ecde1] sticky top-24 self-start gap-4 flex flex-row p-4">
         {{-- Project Details --}}
         <div class="md:block md:min-w-[20%] dark:text-white text-black">
             {{ $project->clientProjectDuration ?? '1 Month' }}
