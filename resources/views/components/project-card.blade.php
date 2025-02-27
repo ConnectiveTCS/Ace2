@@ -22,17 +22,18 @@
                 <img src="{{ $project->clientProfilePicture ?? 'https://lh3.googleusercontent.com/a-/ALV-UjWu_m0gcx03JSImgMHzwCDXpU1p_-62hJNdJmS3GJcTJOMcsKc0=s45-c-rp-mo-br100' }}"
                     alt="{{ $project->clientName ?? 'Client Name' }} Profile Picture">
                 {{-- Client Name and Business --}}
-                <p class="dark:text-white text-black">{{ $project->clientName ?? 'Mandla Jezile' }} |
-                    {{ $project->clientBusinessName ?? 'h' }}</p>
+                <p class="dark:text-white text-black">
+                    {{ $project->clientName ?? 'Mandla Jezile' }} | {{ $project->clientBusinessName ?? 'h' }}
+                </p>
             </div>
         </div>
     </div>
     {{-- Right Column --}}
     <div class="border-t border-red-600 sticky top-24 self-start end gap-4 flex flex-row p-4">
         {{-- Project Details --}}
-        {{-- Spacer --}}
         <div class="md:block md:min-w-[20%] dark:text-white text-black">
-            {{ $project->clientProjectDuration ?? '1 Month' }}</div>
+            {{ $project->clientProjectDuration ?? '1 Month' }}
+        </div>
         <div class="md:w-[80%]">
             <h2 class="text-3xl dark:text-white text-black">{{ $project->clientBusinessName ?? 'Next Devlivery' }}</h2>
             <hr class="my-4 border-red-600">
@@ -43,16 +44,16 @@
                     {{ $project->clientShortStudy ?? "We designed and developed a new website for Next Delivery, a South African delivery services company. We aimed to clearly communicate their services, enhance the user experience for potential customers, and align the website with Next Delivery's brand identity" }}
                 @endif
             </p>
-            <span class="dark:text-white text-black text-lg">TYPE: <span class="flip-text inline-block">
+            <span class="dark:text-white text-black text-lg">
+                TYPE: <span class="flip-text inline-block">
                     @if (is_array($project->clientProjectCategory))
                         {{ implode(', ', $project->clientProjectCategory) }}
                     @else
                         {{ $project->clientProjectCategory ?? 'hello' }}
                     @endif
-                </span></span>
-
+                </span>
+            </span>
         </div>
-
     </div>
 </div>
 @php
@@ -63,7 +64,6 @@
 <script>
     // Use the pre-defined PHP variable for flipWords
     const flipWords = @json($flipWords);
-
     setInterval(() => {
         document.querySelectorAll('.flip-text').forEach(element => {
             let currentText = element.textContent.trim();
