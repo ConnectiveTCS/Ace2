@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
+// Publice View
 
 Route::get('/', function () {
 
@@ -15,6 +16,13 @@ Route::get('/dashboard', function () {
     $projects = App\Models\Project::all();
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/our_projects', function () {
+    $projects = App\Models\Project::all();
+    return view('our_projects', compact('projects'));
+})->name('our_projects');
+
+// Authenticated View
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

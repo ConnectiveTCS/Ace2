@@ -19,7 +19,7 @@
                 <div class="mt-8 flex items-center justify-center space-x-4">
                     {{-- Left Button --}}
                     @include('components.pbutton', [
-                        'href' => '#',
+                        'href' => route('our_projects'),
                         'buttonText' => 'Explore Projects',
                         'darkButtonColor' => 'dark:bg-[#ff3b1d]',
                         'darkButtonText' => 'dark:text-gray-800',
@@ -155,7 +155,7 @@
         </div>
     </section>
     {{-- Why Work With Us Section --}}
-    <section class="grid grid-cols-2 py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
+    <section class="grid grid-cols-2 py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900 mt-16">
         <div class=" sticky self-start top-28">
             <h2 class="text-gray-900 dark:text-gray-100 md:text-9xl">Why Work With Us</h2>
         </div>
@@ -228,7 +228,7 @@
 
     </section>
 
-
+{{-- Scripts & Styles --}}
     <style>
         @keyframes fade-in-bottom {
             from {

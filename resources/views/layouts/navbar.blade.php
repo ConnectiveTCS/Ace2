@@ -13,7 +13,7 @@
                     d="M1 1h15M1 7h15M1 13h15" />
             </svg>
         </button>
-        <div class="hidden w-full md:h-[80vh]" id="navbar-hamburger">
+        <div class="hidden w-full" id="navbar-hamburger">
             <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                 <li>
                     <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm dark:bg-blue-600"
